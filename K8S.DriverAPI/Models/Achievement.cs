@@ -1,5 +1,5 @@
 ﻿
-namespace K8S.Entities
+namespace K8S.DriverAPI.Models
 {
     public class Achievement : BaseEntity
     {

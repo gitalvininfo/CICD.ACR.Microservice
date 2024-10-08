@@ -16,8 +16,4 @@
 	  </PackageReference>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\K8S.Entities\K8S.Entities.csproj" />
-  </ItemGroup>
 </Project>

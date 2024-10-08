@@ -2,7 +2,7 @@
 using K8S.DriverAPI.Data;
 using K8S.DriverAPI.Data.Repositories;
 using K8S.DriverAPI.Data.Repositories.Interfaces;
-using K8S.Entities;
+using K8S.DriverAPI.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 

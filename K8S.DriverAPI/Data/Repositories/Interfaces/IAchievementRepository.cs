@@ -1,6 +1,6 @@
 ﻿
 
-using K8S.Entities;
+using K8S.DriverAPI.Models;
 
 namespace K8S.DriverAPI.Data.Repositories.Interfaces
 {

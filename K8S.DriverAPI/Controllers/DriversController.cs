@@ -1,7 +1,7 @@
 ﻿using K8S.DriverAPI.Data.Repositories.Interfaces;
 using K8S.DriverAPI.DTOs.Requests;
 using K8S.DriverAPI.DTOs.Responses;
-using K8S.Entities;
+using K8S.DriverAPI.Models;
 using Mapster;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;

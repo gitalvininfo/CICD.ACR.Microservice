@@ -1,4 +1,4 @@
-﻿using K8S.Entities;
+﻿using K8S.DriverAPI.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace K8S.DriverAPI.Data

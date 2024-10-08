@@ -1,6 +1,6 @@
 ﻿using K8S.DriverAPI.DTOs.Requests;
 using K8S.DriverAPI.DTOs.Responses;
-using K8S.Entities;
+using K8S.DriverAPI.Models;
 using Mapster;
 
 namespace K8S.DriverAPI.Profiles

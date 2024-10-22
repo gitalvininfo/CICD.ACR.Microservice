@@ -92,7 +92,7 @@ namespace K8S.DriverAPI.Controllers
             return NoContent();
         }
 
-        private async Task<IActionResult> TestConnection()
+        public async Task<IActionResult> TestConnection()
         {
             using (HttpClient client = new HttpClient())
             {
@@ -116,7 +116,7 @@ namespace K8S.DriverAPI.Controllers
         }
 
         [HttpGet("Test")]
-        private IActionResult Test()
+        public IActionResult Test()
         {
             return Ok("Test connection works!!!");
         }

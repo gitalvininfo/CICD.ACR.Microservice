@@ -42,8 +42,6 @@ namespace K8S.DriverAPI.Controllers
 
             var result = drivers.Adapt<IEnumerable<GetDriverResponse>>();
 
-            await TestConnection();
-
             return Ok(result);
         }
 
@@ -92,6 +90,7 @@ namespace K8S.DriverAPI.Controllers
             return NoContent();
         }
 
+        [HttpGet("TestConnection")]
         public async Task<IActionResult> TestConnection()
         {
             using (HttpClient client = new HttpClient())

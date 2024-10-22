@@ -2,6 +2,7 @@ using K8S.DriverAPI.Data;
 using K8S.DriverAPI.Data.Repositories;
 using K8S.DriverAPI.Data.Repositories.Interfaces;
 using K8S.DriverAPI.Profiles;
+using K8S.Microservice.Driver.Data;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -25,6 +26,8 @@ builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(conn
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 var app = builder.Build();
+
+//PrepDB.PrepPopulation(app, app.Environment.IsProduction());
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

@@ -12,19 +12,19 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["K8S.DriverAPI/K8S.DriverAPI.csproj", "K8S.DriverAPI/"]
-RUN dotnet restore "./K8S.DriverAPI/K8S.DriverAPI.csproj"
+COPY ["K8S.DriverStatAPI/K8S.DriverStatAPI.csproj", "K8S.DriverStatAPI/"]
+RUN dotnet restore "./K8S.DriverStatAPI/K8S.DriverStatAPI.csproj"
 COPY . .
-WORKDIR "/src/K8S.DriverAPI"
-RUN dotnet build "./K8S.DriverAPI.csproj" -c $BUILD_CONFIGURATION -o /app/build
+WORKDIR "/src/K8S.DriverStatAPI"
+RUN dotnet build "./K8S.DriverStatAPI.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 # This stage is used to publish the service project to be copied to the final stage
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "./K8S.DriverAPI.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "./K8S.DriverStatAPI.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
 # This stage is used in production or when running from VS in regular mode (Default when not using the Debug configuration)
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "K8S.DriverAPI.dll"]
+ENTRYPOINT ["dotnet", "K8S.DriverStatAPI.dll"]

@@ -115,7 +115,7 @@ namespace K8S.DriverAPI.Controllers
             }
         }
 
-        [HttpGet]
+        [HttpGet("Test")]
         private IActionResult Test()
         {
             return Ok("Test connection works!!!");
